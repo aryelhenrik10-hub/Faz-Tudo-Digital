@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryel Henrik | Faz Tudo Digital</title>
+    <link rel="icon" type="image/x-icon" href="./logo aryel.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ícones (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Esconder scrollbar mantendo a funcionalidade */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Animação do Marquee (Ferramentas) */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-infinite-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .animate-infinite-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        .mask-image-fade {
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        /* Animação de pulso suave */
+        .pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+
+        @keyframes pulse-soft {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-black text-white selection:bg-purple-500 selection:text-white pb-20 md:pb-0">
+
+    <!-- Variáveis do WhatsApp -->
+    <script>
+        const whatsappNumber = "5512991262104";
+        const whatsappMessage = encodeURIComponent("Olá Aryel! Vi o seu site e quero tirar minha ideia do papel. Podemos conversar sobre um orçamento?");
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    </script>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/5512991262104?text=Ol%C3%A1%20Aryel!%20Vi%20o%20seu%20site%20e%20quero%20tirar%20minha%20ideia%20do%20papel.%20Podemos%20conversar%20sobre%20um%20or%C3%A7amento%3F"
+        target="_blank" rel="noreferrer"
+        class="fixed bottom-6 right-6 z-[100] bg-green-500 text-white p-4 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 hover:bg-green-400 transition-all duration-300 group"
+        aria-label="Falar no WhatsApp">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span
+            class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-black px-3 py-1 rounded-lg text-sm font-bold whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity">
+            Faça um orçamento
+        </span>
+    </a>
+
+    <!-- AVISO TOPO (Escassez) -->
+    <div class="bg-[#fce6d5] text-black py-2 px-4 text-center text-xs md:text-sm font-bold uppercase tracking-wider">
+        🔥 Atenção: Apenas 3 vagas disponíveis para novos projetos este mês.
+    </div>
+
+    <!-- HEADER STICKY -->
+    <header
+        class="sticky top-0 z-50 bg-[#4a1d60]/95 backdrop-blur-md text-white py-3 px-4 md:px-8 border-b border-purple-500/30 flex justify-between items-center shadow-lg transition-all">
+        <a href="https://instagram.com/aryelhenrik.designer" target="_blank" rel="noreferrer"
+            class="hover:text-purple-300 transition-colors flex items-center gap-2 font-bold tracking-tight">
+            <i data-lucide="instagram" class="w-5 h-5"></i><img src="./logo aryel.png" width="5%">
+            <span class="hidden sm:inline">@aryelhenrik.designer</span>
+            <span class="sm:hidden">Aryel Henrik</span>
+        </a>
+        <a href="https://wa.me/5512991262104?text=Ol%C3%A1%20Aryel!%20Vi%20o%20seu%20site%20e%20quero%20tirar%20minha%20ideia%20do%20papel.%20Podemos%20conversar%20sobre%20um%20or%C3%A7amento%3F"
+            target="_blank" rel="noreferrer"
+            class="bg-white text-[#4a1d60] px-5 py-2 rounded-full text-sm font-black hover:bg-[#fce6d5] hover:scale-105 transition-all shadow-md">
+            Fale Comigo
+        </a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+        class="relative pt-16 pb-28 px-6 lg:px-20 bg-gradient-to-b from-[#2a0e38] to-black overflow-hidden flex flex-col items-center text-center">
+        <div
+            class="absolute top-10 left-10 w-64 h-64 bg-purple-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse">
+        </div>
+        <div
+            class="absolute top-20 right-10 w-72 h-72 bg-fuchsia-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30">
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-8">
+            <span
+                class="text-[#a465c4] font-bold tracking-widest uppercase mb-4 text-sm md:text-base border border-[#a465c4]/40 px-4 py-1 rounded-full bg-purple-900/20">
+                A sua "Agência" de 1 Homem Só
+            </span>
+            <h1
+                class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-[#fce6d5] leading-none mb-6 drop-shadow-lg text-center">
+                Faz Tudo <br /><span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-[#a465c4] to-[#7c3aed]">Digital</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed px-4 text-center">
+                Por que pagar caro a uma equipe inteira se você pode ter um estrategista que resolve tudo? Do design à
+                programação, eu transformo a sua ideia numa máquina de vendas online.
+            </p>
+            <a href="https://wa.me/5512991262104?text=Ol%C3%A1%20Aryel!%20Vi%20o%20seu%20site%20e%20quero%20tirar%20minha%20ideia%20do%20papel.%20Podemos%20conversar%20sobre%20um%20or%C3%A7amento%3F"
+                target="_blank" rel="noreferrer"
+                class="pulse-soft group relative inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 font-black text-white transition-all duration-200 bg-[#7c3aed] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 hover:bg-[#6d28d9] shadow-[0_0_30px_rgba(124,58,237,0.5)]">
+                <span class="flex items-center gap-3 text-lg sm:text-xl">
+                    🚀 Tirar Minha Ideia do Papel Agora
+                    <i data-lucide="arrow-right" class="group-hover:translate-x-2 transition-transform"></i>
+                </span>
+            </a>
+            <p class="mt-4 text-sm text-gray-400 flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-green-400"></i> Orçamento rápido e sem compromisso.
+            </p>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="py-16 px-6 lg:px-20 bg-gradient-to-b from-black to-[#110517] relative z-20 -mt-10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="bg-[#1a0b22] p-8 rounded-2xl border border-white/5 flex flex-col items-center text-center hover:border-purple-500/50 transition-colors">
+                <div class="w-16 h-16 bg-purple-900/30 rounded-full flex justify-center items-center mb-6">
+                    <i data-lucide="clock" class="text-[#a465c4] w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Mais Tempo Livre</h3>
+                <p class="text-gray-400">Pare de micro-gerenciar 5 freelancers diferentes. Fale só comigo e eu resolvo
+                    tudo enquanto você foca em vender.</p>
+            </div>
+            <div
+                class="bg-[#1a0b22] p-8 rounded-2xl border border-white/5 flex flex-col items-center text-center hover:border-purple-500/50 transition-colors">
+                <div class="w-16 h-16 bg-purple-900/30 rounded-full flex justify-center items-center mb-6">
+                    <i data-lucide="piggy-bank" class="text-[#a465c4] w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Redução de Custos</h3>
+                <p class="text-gray-400">Qualidade de agência, preço de especialista independente. Você paga pelo
+                    resultado, não por escritórios luxuosos.</p>
+            </div>
+            <div
+                class="bg-[#1a0b22] p-8 rounded-2xl border border-white/5 flex flex-col items-center text-center hover:border-purple-500/50 transition-colors">
+                <div class="w-16 h-16 bg-purple-900/30 rounded-full flex justify-center items-center mb-6">
+                    <i data-lucide="target" class="text-[#a465c4] w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Foco em Conversão</h3>
+                <p class="text-gray-400">Artes e sites bonitos não pagam boletos. O meu design e copywriting são
+                    projetados para fazer o cliente clicar e comprar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DE TUDO UM POUCO -->
+    <section class="py-24 px-6 lg:px-20 bg-[#fce6d5] text-black overflow-hidden border-y-[10px] border-[#4a1d60]">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2 flex flex-col items-start">
+                <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-black leading-none mb-6">
+                    De <span class="text-[#6d28d9]">Tudo</span><br /> Um Pouco
+                </h2>
+                <p class="text-lg md:text-xl text-gray-800 leading-relaxed font-bold mb-6">
+                    "Precisa de uma landing page que venda? Artes para redes sociais? Edição dinâmica ou uma estratégia
+                    inteligente? Eu centralizo tudo."
+                </p>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium mb-8">
+                    Sem burocracia e com comunicação direta pelo WhatsApp. Você lidera a sua empresa, e eu cuido da
+                    tecnologia e criatividade para o seu faturamento crescer.
+                </p>
+            </div>
+
+            <!-- Abstract Art Block -->
+            <div
+                class="hidden md:flex lg:w-1/2 justify-center items-center relative w-full h-[300px] md:h-[400px] mt-10 lg:mt-0 overflow-hidden sm:overflow-visible">
+                <div class="absolute w-32 md:w-48 h-full bg-[#6d28d9] left-1/4 top-0 z-0 transform -skew-x-6"></div>
+                <div class="absolute w-28 h-28 md:w-40 md:h-40 bg-black rounded-full top-5 md:top-10 right-1/4 z-10">
+                </div>
+                <div
+                    class="absolute w-32 h-32 md:w-48 md:h-48 border-[1px] border-[#6d28d9] rounded-full bottom-5 md:bottom-10 left-1/4 z-20 flex justify-center items-center overflow-hidden bg-[#fce6d5]">
+                    <div class="w-[200%] h-[200%] opacity-20"
+                        style="background-image: radial-gradient(#6d28d9 2px, transparent 2px); background-size: 15px 15px;">
+                    </div>
+                </div>
+                <div
+                    class="absolute w-40 h-40 md:w-56 md:h-56 bg-black rounded-full bottom-0 right-5 md:right-10 z-30 shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS (Carrossel) -->
+    <section class="py-24 px-0 bg-[#110517]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 px-6">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-[#fce6d5] mb-2">
+                    Meus <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-[#7c3aed]">Serviços</span>
+                </h2>
+                <p class="text-gray-400 mt-4 text-lg">Deslize para ver tudo o que posso fazer pelo seu negócio.</p>
+                <div class="w-24 h-1 bg-[#7c3aed] mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="relative w-full group">
+                <button onclick="scrollCarousel('left')"
+                    class="hidden md:block absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-black/60 hover:bg-[#7c3aed] text-white p-3 md:p-4 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 shadow-xl border border-white/10">
+                    <i data-lucide="chevron-left" class="w-8 h-8"></i>
+                </button>
+
+                <div id="services-carousel"
+                    class="flex overflow-x-auto gap-6 px-6 md:px-20 py-8 items-center scrollbar-hide cursor-grab snap-x snap-mandatory">
+                    <!-- Cards -->
+                    <div onclick="buyService('Design Gráfico')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="1.png" alt="Design Gráfico" class="w-full h-auto object-cover pointer-events-none"
+                            loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                    <div onclick="buyService('Marketing Digital')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="2.png" alt="Marketing Digital" class="w-full h-auto object-cover pointer-events-none"
+                            loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                    <div onclick="buyService('Edição de Vídeo')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="3.png" alt="Edição de Vídeo" class="w-full h-auto object-cover pointer-events-none"
+                            loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                    <div onclick="buyService('Criação de Documento')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="4.png" alt="Criação de Documento"
+                            class="w-full h-auto object-cover pointer-events-none" loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                    <div onclick="buyService('Desenvolvimento de Site')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="5.png" alt="Desenvolvimento de Site"
+                            class="w-full h-auto object-cover pointer-events-none" loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                    <div onclick="buyService('Criação de Propaganda')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="6.png" alt="Criação de Propaganda"
+                            class="w-full h-auto object-cover pointer-events-none" loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                    <div onclick="buyService('Melhoria ou Criação de Apresentação')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="7.png" alt="Melhoria ou Criação de Apresentação"
+                            class="w-full h-auto object-cover pointer-events-none" loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                    <div onclick="buyService('Conteúdos Digitais')"
+                        class="snap-center shrink-0 w-[280px] md:w-[320px] rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-500 ease-out border-2 border-purple-900/30 hover:border-[#7c3aed] select-none bg-[#2a0e38] relative group/card cursor-pointer">
+                        <img src="8.png" alt="Conteúdos Digitais" class="w-full h-auto object-cover pointer-events-none"
+                            loading="lazy" draggable="false" />
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span class="bg-[#7c3aed] text-white px-6 py-2 rounded-full font-bold">Quero este!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="scrollCarousel('right')"
+                    class="hidden md:block absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-black/60 hover:bg-[#7c3aed] text-white p-3 md:p-4 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 shadow-xl border border-white/10">
+                    <i data-lucide="chevron-right" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF (Testemunhos Diferenciados) -->
+    <section class="py-20 bg-gradient-to-b from-[#110517] to-black px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white">O que dizem do <span
+                        class="text-[#a465c4]">Meu Trabalho</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Avaliação 1: 5 Estrelas -->
+                <div class="bg-[#1a0b22] p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">"O Aryel transformou completamente a identidade digital da
+                            minha empresa. A página de vendas nova aumentou os meus lucros em 40% logo no primeiro mês!
+                            Recomendo de olhos fechados."</p>
+                    </div>
+                    <div class="font-bold text-[#fce6d5]">- Carlos M., Empreendedor</div>
+                </div>
+
+                <!-- Avaliação 2: 4 Estrelas -->
+                <div class="bg-[#1a0b22] p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current text-gray-700" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">"Muito prático concentrar tudo numa pessoa só. As edições
+                            de vídeo ficaram ótimas e a copy para as minhas redes foi no ponto. O design final ficou
+                            incrível e poupei horas de dores de cabeça."</p>
+                    </div>
+                    <div class="font-bold text-[#fce6d5]">- Mariana C., Arquiteta</div>
+                </div>
+
+                <!-- Avaliação 3: 5 Estrelas -->
+                <div class="bg-[#1a0b22] p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">"Estava cansado de gerir vários freelancers que não
+                            comunicavam entre si. O Aryel pegou o projeto todo: fez o design, o site e a estratégia de
+                            forma impecável. É um serviço premium!"</p>
+                    </div>
+                    <div class="font-bold text-[#fce6d5]">- Roberto A., Diretor Executivo</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TOOLS SECTION (Renderizado com JavaScript) -->
+    <section class="py-12 bg-black border-y border-white/10 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-sm font-bold tracking-widest text-gray-400 uppercase mb-8 px-6">
+                Dominando a Tecnologia a Favor do seu Negócio
+            </p>
+            <div class="relative w-full overflow-hidden flex items-center h-24 mask-image-fade">
+                <div id="marquee-container" class="animate-infinite-scroll gap-12 md:gap-20 items-center px-4">
+                    <!-- Conteúdo gerado via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-20 bg-black px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-center mb-12 text-[#fce6d5]">
+                Dúvidas Frequentes</h2>
+            <div class="space-y-4">
+
+                <!-- FAQ 1 -->
+                <div class="border border-purple-900/50 rounded-xl bg-[#110517] overflow-hidden">
+                    <button onclick="toggleFaq(1)"
+                        class="w-full flex justify-between items-center p-6 text-left font-bold text-lg hover:bg-[#1a0b22] transition-colors focus:outline-none">
+                        Como funciona o processo de trabalho?
+                        <i id="faq-icon-1" data-lucide="chevron-down"
+                            class="text-gray-500 w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-1" class="hidden p-6 pt-0 text-gray-400 border-t border-purple-900/30">
+                        Primeiro conversamos pelo WhatsApp para eu entender a sua necessidade. Depois, envio um
+                        orçamento e prazo exato. Com a aprovação, coloco a mão na massa e vou enviando atualizações do
+                        projeto.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-purple-900/50 rounded-xl bg-[#110517] overflow-hidden">
+                    <button onclick="toggleFaq(2)"
+                        class="w-full flex justify-between items-center p-6 text-left font-bold text-lg hover:bg-[#1a0b22] transition-colors focus:outline-none">
+                        Posso contratar apenas um serviço específico?
+                        <i id="faq-icon-2" data-lucide="chevron-down"
+                            class="text-gray-500 w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-2" class="hidden p-6 pt-0 text-gray-400 border-t border-purple-900/30">
+                        Com certeza! Embora eu ofereça pacotes completos (O Faz Tudo), você pode contratar apenas a
+                        edição de um vídeo, uma arte ou a criação de uma página.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-purple-900/50 rounded-xl bg-[#110517] overflow-hidden">
+                    <button onclick="toggleFaq(3)"
+                        class="w-full flex justify-between items-center p-6 text-left font-bold text-lg hover:bg-[#1a0b22] transition-colors focus:outline-none">
+                        Por que contratar um 'Faz Tudo' e não uma agência?
+                        <i id="faq-icon-3" data-lucide="chevron-down"
+                            class="text-gray-500 w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-3" class="hidden p-6 pt-0 text-gray-400 border-t border-purple-900/30">
+                        Agências têm custos altos de equipe e burocracia. Comigo, você tem comunicação direta,
+                        velocidade na entrega e paga muito menos por uma qualidade de alto padrão.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA & FOOTER -->
+    <footer class="relative bg-[#4a1d60] pt-24 pb-20 md:pb-12 px-6 lg:px-20 text-center overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-black/20 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">
+                Pronto para escalar o seu negócio sem dor de cabeça?
+            </h2>
+            <p class="text-xl text-purple-200 mb-10">
+                Chega de perder tempo. Vamos montar um plano de ação digital focado em converter os seus visitantes em
+                clientes.
+            </p>
+
+            <a href="https://wa.me/5512991262104?text=Ol%C3%A1%20Aryel!%20Vi%20o%20seu%20site%20e%20quero%20tirar%20minha%20ideia%20do%20papel.%20Podemos%20conversar%20sobre%20um%20or%C3%A7amento%3F"
+                target="_blank" rel="noreferrer"
+                class="pulse-soft group relative inline-flex items-center justify-center px-6 sm:px-10 py-4 sm:py-5 font-black text-[#4a1d60] transition-all duration-200 bg-[#fce6d5] rounded-full focus:outline-none hover:bg-white shadow-[0_0_40px_rgba(252,230,213,0.3)] mb-10 w-[100%] sm:w-auto mx-auto">
+                <span class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-lg sm:text-xl text-center">
+                    <i data-lucide="message-circle" class="text-green-600 w-6 h-6"></i>
+                    Quero o Meu Orçamento Agora
+                </span>
+            </a>
+
+            <!-- Contatos -->
+            <div
+                class="border-t border-purple-400/30 pt-8 w-full flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-purple-200 font-medium">
+                <a href="mailto:aryelhenrik10@gmail.com"
+                    class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    aryelhenrik10@gmail.com
+                </a>
+                <a href="https://wa.me/5512991262104" target="_blank" rel="noreferrer"
+                    class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                    (12) 99126-2104
+                </a>
+                <a href="https://instagram.com/aryelhenrik.designer" target="_blank" rel="noreferrer"
+                    class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                    @aryelhenrik.designer
+                </a>
+            </div>
+
+            <p class="text-purple-400 text-sm mt-12">
+                © <span id="current-year"></span> Aryel Henrik. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts Funcionais -->
+    <script>
+        // Inicializar Ícones Lucide
+        lucide.createIcons();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Lógica do Carrossel (Drag to scroll com bloqueio de clique falso)
+        const carousel = document.getElementById('services-carousel');
+        let isDragging = false;
+        let startX, scrollLeft;
+        let didDrag = false; // Flag para diferenciar clique normal de arraste
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            didDrag = false; // Reseta o estado ao iniciar o clique
+            carousel.classList.add('cursor-grabbing', 'snap-none');
+            carousel.classList.remove('cursor-grab', 'snap-x', 'snap-mandatory');
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isDragging = false;
+            carousel.classList.remove('cursor-grabbing', 'snap-none');
+            carousel.classList.add('cursor-grab', 'snap-x', 'snap-mandatory');
+        });
+
+        carousel.addEventListener('mouseup', () => {
+            isDragging = false;
+            carousel.classList.remove('cursor-grabbing', 'snap-none');
+            carousel.classList.add('cursor-grab', 'snap-x', 'snap-mandatory');
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 1.5; // Velocidade do arraste
+            
+            // Se o utilizador moveu o rato mais do que 5px, conta como arraste e não como clique
+            if (Math.abs(walk) > 5) {
+                didDrag = true;
+            }
+            
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+
+        // Função para os botões de serviço com WhatsApp dinâmico
+        window.buyService = (serviceName) => {
+            if (didDrag) return; // Cancela se a pessoa estava apenas arrastando o carrossel
+            
+            const whatsappNumber = "5512991262104";
+            const message = encodeURIComponent(`Olá, Aryel! Gostaria do serviço de ${serviceName}, me fale sobre o orçamento.`);
+            const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+            
+            window.open(url, '_blank');
+        };
+
+        // Função de clique nas setas do carrossel
+        window.scrollCarousel = (direction) => {
+            const cardWidth = carousel.firstElementChild.offsetWidth + 24; // Largura do card + gap
+            const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        };
+
+        // Renderização Infinita das Ferramentas (Marquee)
+        const tools = [
+            { name: 'Canva', src: 'ARYEL (1).png' },
+            { name: 'Figma', src: 'ARYEL (2).png' },
+            { name: 'CapCut', src: 'ARYEL (3).png' },
+            { name: 'BandLab', src: 'ARYEL (4).png' },
+            { name: 'VS Code', src: 'ARYEL (5).png' },
+            { name: 'Gemini', src: 'ARYEL (6).png' },
+            { name: 'Word', src: 'ARYEL (7).png' },
+            { name: 'SUNO', src: 'ARYEL (8).png' }
+        ];
+
+        const marqueeContainer = document.getElementById('marquee-container');
+        // Multiplicando as ferramentas para criar o efeito infinito liso
+        const allTools = [...tools, ...tools, ...tools, ...tools];
+
+        allTools.forEach(tool => {
+            marqueeContainer.innerHTML += `
+        <div class="flex items-center justify-center opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer min-w-[80px]">
+          <img src="${tool.src}" alt="${tool.name}" title="${tool.name}" class="h-12 md:h-16 w-auto object-contain drop-shadow-md" loading="lazy" />
+        </div>
+      `;
+        });
+
+        // Lógica do Accordion (Dúvidas Frequentes)
+        window.toggleFaq = (index) => {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'chevron-up');
+                icon.classList.add('text-[#a465c4]');
+                icon.classList.remove('text-gray-500');
+            } else {
+                content.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'chevron-down');
+                icon.classList.add('text-gray-500');
+                icon.classList.remove('text-[#a465c4]');
+            }
+            // Re-renderizar o ícone alterado
+            lucide.createIcons();
+        };
+    </script>
+</body>
+
+</html>
